@@ -1,4 +1,4 @@
-Horas_Trabajo = input ("¿Cuántas horas has trabajado?")
-Coste_Hora = input ("¿Cuánto cuesta la hora?")
-Importe_Total = Horas_Trabajo * Coste_Hora
-print ("El importe total del servicio es:", Importe_Total)
+horasT = int(input("¿Cuántas horas has trabajado?: "))
+costeH = int(input("¿Cuánto cuesta la hora trabajada?: "))
+impTotal = horasT * costeH
+print ("El importe total del servicio es:", impTotal, "euros")

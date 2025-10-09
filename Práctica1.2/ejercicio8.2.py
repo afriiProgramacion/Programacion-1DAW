@@ -1,4 +1,5 @@
-num1 = int(input("Introduce un número: "))
-num2 = int(input("Introduce otro número: "))
-suma = num1 + num2 
-print ("La suma de estos números es:", suma)
+suma = 0 
+for i in range(1,4): # En este ejercicio la i no se usa para sumar ;)
+    n = int(input(f"Dime un numero {i}: ",))  
+    suma += n
+print ("La suma de los numeros es:", suma)

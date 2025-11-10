@@ -22,3 +22,5 @@ try:
 
 except Exception as ex:
     print(f"HA OCURRIDO UN ERROR {ex}")
+except ValueError:
+    print("ERROR: Vlor no válido")

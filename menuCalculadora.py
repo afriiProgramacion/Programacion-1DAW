@@ -1,89 +1,97 @@
 import os
 
-def suma(a,b):
-    return a+b
 
-def resta(a,b):
+# Menu de una calculadora
+def suma (a, b):
+    resultado = a + b
+    return resultado
+
+def resta (a, b):
     if a==b:
         return 0
     elif a<b:
         return b - a
     else:
-        return a-b
+        return a - b
 
-def multiplica(a,b):
-    return a*b
+def multiplicar (a, b):
+    resultado = a * b
+    return resultado
 
-def divide(a,b):
-    if b!= 0:
-        return a/b
+def dividir (a, b):
+    if b != 0:
+        resultado = a / b
+        return resultado
     else:
-        return None
+        return "Error: División por cero"
     
-def raiz_cuadrada(a,b):
-    return a ** b
-
-def potencia(a,b):
-    
-    if b == 0:
-        return 1
+def raizCuadrada(a):
+    if a >= 0:
+        return a ** 0.5
     else:
-        return  a ** b
+        return "error: raíz cuadrada e un número negativo."
 
 def factorial(a):
-    resultado = 1
-
     if a < 0:
-        return "NO SIRVEN NUMEROS NEGATIVOS"
-    else:
-        for i in range (0, a):
-            return  resultado * i
-
-def pintaMenu():
-
+        return "Error: no existe el factorial de un número negativo."
     
+    resultado = 1
+    for i in range(1, a + 1):
+        resultado *= i
+    return resultado
+
+def potencia(a,b):
+    resultado = a ** b
+    return resultado
+
+def pintamenu():
+
+    os.system('cls')
+    print("Menu calculadora:")
     print("1. SUMAR")
     print("2. RESTAR")
-    print("3. MILTIPLICAR")
+    print("3. MULTIPLICAR")
     print("4. DIVIDIR")
-    print("5. RAÍZ CUADRADA")
-    print("6. POTENCIA")
-    print("7. FACTORIAL")
-    print("0. SALIR DEL PROGRAMA!!")
+    print("5. RAÍZ")
+    print("6. FACTORIAL")
+    print("7. POTENCIA")
+    print("0. SALIR")
 
-if __name__ == "main":
+# Programa principal
+if __name__=="__main__":
+    n1 = 2
+    n2 = 4
 
-    valor1 = 2
-    valor2 = 4
+    option = 1
+    while option != 0:
+    
+        pintamenu()
 
-    opcion = 1
-    while opcion != 0:
+        option = int(input("Elige una opción: "))
 
-        pintaMenu()
-        opcion = int(input("ELIGE UNA OPCIÓN: "))
-
-        match opcion:
+        match option:
             case 1: 
-                print("LA SUMA ES: ", suma(valor1,valor2))
-                os.system('pause')
+                print("La suma es: ", suma(n1, n2))
+                os.system ('pause')
             case 2: 
-                print("LA RESTA ES: ", resta(valor1,valor2))
-                os.system('pause')
+                print("La resta es: ", resta(n1, n2))
+                os.system ('pause')
             case 3: 
-                print("LA MULTIPLICACIÓN ES: ", multiplica(valor1,valor2))
-                os.system('pause')
+                print("La multiplicación es: ", multiplicar(n1, n2))
+                os.system ('pause')
             case 4: 
-                print("LA DIVISIÓN ES: ", divide(valor1,valor2))
-                os.system('pause')
+                print("La división es: ", dividir(n1, n2))
+                os.system ('pause')
             case 5: 
-                print("LA RAÍZ CUADRADA ES: ", raiz_cuadrada(valor1))
-                os.system('pause')
-            case 6:
-                print("LA POTENCIA ES: ", potencia(valor1))
-                os.system('pause')
+                print("La raíz es: ", raizCuadrada(n1))
+            case 6: 
+                print("El factorial es: ", factorial(n1))
+                os.system ('pause')
             case 7: 
-                print("EL FACTORIAL ES: ", factorial(valor1))
-                os.system('pause')
-            case 0: print("HASTA LUEGO")
-            case _: print("OPCIÓN NO VÁLIDA, POR FAVOR, INTRODUCE UNA OPCIÓN VALIDA: ")
-
+                print("La potencia es: ", potencia(n1, n2))
+                os.system ('pause')
+            case 0: 
+                print("HASTA LUEGO")
+            case _: 
+                print("Opción no válida")
+                os.system ('pause')

@@ -1,7 +1,7 @@
 
-abstract class Vehiculo(val id: Int, val modelo: String, var bateria: Int): Comparable<Vehiculo> {
+abstract class Vehiculo(val id: Int, val modelo: String, bateria: Int): Comparable<Vehiculo> {
 
-    var Bateria: Int = bateria
+    var bateria: Int = bateria
     set(value) {
         if (value in 0..100) {
             field = value
@@ -15,6 +15,9 @@ abstract class Vehiculo(val id: Int, val modelo: String, var bateria: Int): Comp
     init {
         println("Vehículo con Bateria $bateria, de modelo $modelo, id $id")
     }
-
+    override fun compareTo(other: Vehiculo): Int {
+        return this.bateria - other.bateria
+    }
+        abstract fun calcularAutonomia(): Int
 
 }
